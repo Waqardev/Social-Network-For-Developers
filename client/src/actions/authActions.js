@@ -32,7 +32,7 @@ export const loginUser = userData => dispatch => {
 
       //Decode token to get user data
       const decoded = jwt_decode(token);
-
+      console.log(decoded);
       //Set current user
       dispatch(setCurrentUser(decoded));
     })
@@ -45,7 +45,7 @@ export const loginUser = userData => dispatch => {
 };
 
 //Set logged in user
-export const setCurrentUser = decoded => dispatch => {
+export const setCurrentUser = decoded => {
   return {
     type: SET_CURRENT_USER,
     payload: decoded

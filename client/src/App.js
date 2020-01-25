@@ -5,6 +5,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 import Navbar from "./components/layout/Navbar";
+import test from "./test/test";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import register from "./components/auth/register";
@@ -41,6 +42,7 @@ function App() {
           <Navbar />
           <Route exact path="/" component={Landing} />
           <div className="container">
+            <Route exact path="/test" component={test} />
             <Route exact path="/register" component={register} />
             <Route exact path="/login" component={login} />
           </div>

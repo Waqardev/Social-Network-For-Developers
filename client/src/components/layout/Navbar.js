@@ -73,6 +73,17 @@ class Navbar extends Component {
             </ul>
             {isAuthenticated ? authLinks : guestLinks}
           </div>
+          <Link className="navbar-brand" to="/test">
+            Test
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#mobile-nav"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
       </nav>
     );

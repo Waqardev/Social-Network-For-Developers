@@ -10,6 +10,8 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import register from "./components/auth/register";
 import login from "./components/auth/login";
+import Dashboard from "./components/dashboard/Dashboard";
+import { clearCurrentProfile } from "./actions/profileActions";
 import "./App.css";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -27,8 +29,8 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     //Logout user
     store.dispatch(logoutUser());
-    //TODO: Clear current profile
-
+    //Clear current profile
+    store.dispatch(clearCurrentProfile());
     //Redirect to login
     window.location.href = "/login";
   }
@@ -45,6 +47,7 @@ function App() {
             <Route exact path="/test" component={test} />
             <Route exact path="/register" component={register} />
             <Route exact path="/login" component={login} />
+            <Route exact path="/dashboard" component={Dashboard} />
           </div>
           <Footer />
         </div>

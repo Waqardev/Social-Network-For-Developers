@@ -11,6 +11,7 @@ import Landing from "./components/layout/Landing";
 import register from "./components/auth/register";
 import login from "./components/auth/login";
 import Dashboard from "./components/dashboard/Dashboard";
+import CreateProfile from "./components/create-profile/CreateProfile";
 import { clearCurrentProfile } from "./actions/profileActions";
 import "./App.css";
 import { Provider } from "react-redux";
@@ -52,6 +53,13 @@ class App extends Component {
               <Route exact path="/login" component={login} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-profile"
+                  component={CreateProfile}
+                />
               </Switch>
             </div>
             <Footer />

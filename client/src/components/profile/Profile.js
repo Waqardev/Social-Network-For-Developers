@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getProfileByHandle } from "../../actions/profileActions";
 import ProfileHeader from "./ProfileHeader";
+import ProfileAbout from "./ProfileAbout";
+import ProfileCreds from "./ProfileCreds";
 import Spinner from "../common/Spinner";
 
 class Profile extends Component {
@@ -30,6 +32,11 @@ class Profile extends Component {
             <div className="col-md-6" />
           </div>
           <ProfileHeader profile={profile} />
+          <ProfileAbout profile={profile} />
+          <ProfileCreds
+            education={profile.education}
+            experience={profile.experience}
+          />
         </div>
       );
     }
